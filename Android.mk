@@ -83,7 +83,7 @@ LOCAL_C_INCLUDES += \
 LOCAL_CFLAGS += \
  $(libudev_common_c_flags)
 
-LOCAL_MODULE:= libudev
+LOCAL_MODULE:= libudev_static
 LOCAL_MODULE_TAGS := optional
 LOCAL_PRELINK_MODULE:= false
 
