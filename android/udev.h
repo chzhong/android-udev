@@ -70,19 +70,7 @@ typedef unsigned int locale_t;
 #define __bswap_64(x) __builtin_bswap64(x)
 
 /* work-arounds for duplicate definitions of endian functions */
-#define htole16 sys_htole16
-#define htole32 sys_htole32
-#define htole64 sys_htole64
-#define htobe16 sys_htobe16
-#define htobe32 sys_htobe32
-#define htobe64 sys_htobe64
-#include <sys/endian.h>
-#undef htole16
-#undef htole32
-#undef htole64
-#undef htobe16
-#undef htobe32
-#undef htobe64
+#include "sparse-endian.h"
 
 /* struct stat in bionic lacks st_atim, st_mtim, st_ctim */
 #define stat sys_stat
