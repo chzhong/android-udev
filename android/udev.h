@@ -140,16 +140,6 @@ extern char *canonicalize_file_name(const char *path);
 /* missing syscalls */
 #include <sys/syscall.h>
 
-#ifdef __arm__
-#define __NR_readlinkat		332
-#define __NR_signalfd4		355
-#define __NR_epoll_create1	357
-#define __NR_dup3		358
-#define __NR_inotify_init1	360
-#define __NR_accept4		366
-#else
-#endif
-
 #define readlinkat(dirfd,pathname,buf,bufsiz) syscall(__NR_readlinkat,dirfd,pathname,buf,bufsiz)
 #define epoll_create1(flags) syscall(__NR_epoll_create1,flags)
 #define dup3(fd,fd2,flags) syscall(__NR_dup3,fd,fd2,flags)
