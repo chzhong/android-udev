@@ -129,7 +129,7 @@ LOCAL_C_INCLUDES += \
 LOCAL_CFLAGS += -Wno-missing-field-initializers
 LOCAL_CFLAGS += -std=gnu99
 LOCAL_CFLAGS += -include external/udev/android/udev.h
-LOCAL_CFLAGS += -DVERSION=\"$(shell head -n 1 $(LOCAL_PATH)/VERSION)\"
+LOCAL_CFLAGS += -DVERSION=\"$(shell $(HOST_AWK) "{ print $0 }" $(LOCAL_PATH)/VERSION)\"
 
 LOCAL_STATIC_LIBRARIES := libudev libcutils liblog libc
 
@@ -174,7 +174,7 @@ LOCAL_SRC_FILES:= \
 LOCAL_CFLAGS += -Wno-missing-field-initializers
 LOCAL_CFLAGS += -std=gnu99
 LOCAL_CFLAGS += -include external/udev/android/udev.h
-LOCAL_CFLAGS += -DVERSION=\"$(shell head -n 1 $(LOCAL_PATH)/VERSION)\"
+LOCAL_CFLAGS += -DVERSION=\"$(shell $(HOST_AWK) "{ print $0 }" $(LOCAL_PATH)/VERSION)\"
 
 LOCAL_STATIC_LIBRARIES := libudev libcutils liblog libc
 
