@@ -34,14 +34,14 @@ libudev_common_src_files := \
  android/missing.c
 
 libudev_common_c_includes := \
- external/udev/android \
- external/udev/dist/src/shared \
- external/udev/dist/src/systemd \
+ $(LOCAL_PATH)/android \
+ $(LOCAL_PATH)/dist/src/shared \
+ $(LOCAL_PATH)/dist/src/systemd \
 
 libudev_common_c_flags := \
  -Wno-missing-field-initializers \
  -std=gnu99 \
- -include external/udev/android/udev.h
+ -include $(LOCAL_PATH)/android/udev.h
 
 ### libudev.so
 
