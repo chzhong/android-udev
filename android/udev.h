@@ -2,7 +2,7 @@
 
 #pragma once
 
-#define _GNU_SOURCE
+#define __USE_GNU
 
 #define FIRMWARE_PATH  "/system/etc/firmware"
 #define UDEVLIBEXECDIR "/system/etc/udev"
@@ -156,7 +156,6 @@ extern char *canonicalize_file_name(const char *path);
 #define statvfs(p,s) -1
 
 /* for stuff imported from uClibc such as glob.[ch] */
-#define __USE_GNU 1
 #define __UCLIBC_HAS_GNU_GLOB__ 1
 #define __THROW   __attribute__ ((__nothrow__))
 #define libc_hidden_proto(x)
