@@ -55,6 +55,9 @@ LOCAL_SRC_FILES:= \
 LOCAL_C_INCLUDES += \
  $(libudev_common_c_includes)
 
+LOCAL_EXPORT_C_INCLUDES += \
+ $(LOCAL_PATH)/dist/src/libudev
+
 LOCAL_CFLAGS += \
  $(libudev_common_c_flags)
 
